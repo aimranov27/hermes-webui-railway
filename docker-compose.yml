@@ -1,0 +1,26 @@
+# Runs the template locally the way Railway runs it: one container, one
+# volume at /opt/data, the WebUI on port 8080.
+#
+#   HERMES_WEBUI_PASSWORD=$(openssl rand -hex 16) docker compose up --build
+#   open http://localhost:8080
+#
+# scripts/smoke-test.sh uses this file with its own project name and port.
+services:
+  hermes:
+    build: .
+    image: ${IMAGE:-hermes-webui-railway:local}
+    ports:
+      - "127.0.0.1:${HOST_PORT:-8080}:8080"
+    volumes:
+      - data:/opt/data
+    environment:
+      HERMES_WEBUI_PASSWORD: ${HERMES_WEBUI_PASSWORD:?set HERMES_WEBUI_PASSWORD}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      NOUS_API_KEY: ${NOUS_API_KEY:-}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      TELEGRAM_ALLOWED_USERS: ${TELEGRAM_ALLOWED_USERS:-}
+
+volumes:
+  data:
