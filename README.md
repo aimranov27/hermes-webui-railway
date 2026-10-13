@@ -2,7 +2,7 @@
 
 Run [Hermes Agent](https://github.com/NousResearch/hermes-agent) by Nous Research on an always-on Railway server and use it from any browser through [Hermes WebUI](https://github.com/nesquena/hermes-webui).
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/TEMPLATE_CODE?utm_medium=integration&utm_source=template&utm_campaign=hermes-webui)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/hermes-agent-webui?utm_medium=integration&utm_source=template&utm_campaign=hermes-webui)
 
 ## What you get
 
